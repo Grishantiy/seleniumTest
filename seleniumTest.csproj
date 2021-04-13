@@ -61,12 +61,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GetMethods.cs" />
-    <Compile Include="Pages\VacansiesPage.cs" />
+    <Compile Include="Pages\VacanсiesPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties.cs" />
     <Compile Include="SetMethods.cs" />
-    <Compile Include="Tests\VacansiesTests.cs" />
+    <Compile Include="Tests\VacanсiesTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
