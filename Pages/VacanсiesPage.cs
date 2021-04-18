@@ -88,12 +88,16 @@ namespace seleniumTest.Pages
             btnDepartment.Clicks();
             department.Clicks();
         }
-
+        public void SelectDepartment(string departmentXpath)
+        {
+            btnDepartment.Clicks();
+            Properties.driver.FindElement(By.XPath(departmentXpath)).Clicks();
+        }
         /// <summary>
         /// Select language on the page
         /// </summary>
         /// <param name="language"></param>
-        public void SelectLanguage(params IWebElement [] language)
+        public void SelectLanguage(params IWebElement[] language)
         {
             List<IWebElement> listLanguage = new List<IWebElement>();
             for (int i = 0; i < language.Length; i++)
@@ -101,7 +105,7 @@ namespace seleniumTest.Pages
             List<IWebElement> listComparsion = new List<IWebElement>() { checkerEnglishLanguage, checkerFranceLanguage, checkerGermanLanguage, checkerRussiaLanguage };
             if (btnLanguage.GetAttribute("aria - expanded") != "true")
                 btnLanguage.Clicks();
-            for (int i = 0; i < listLanguage.Count; i++) 
+            for (int i = 0; i < listLanguage.Count; i++)
             {
                 if (!listLanguage[i].Selected)
                     listLanguage[i].Clicks();
@@ -114,6 +118,6 @@ namespace seleniumTest.Pages
                     listUnchecked[i].Clicks();
             }
             btnLanguage.Clicks();
-        }
+        }     
     }
 }

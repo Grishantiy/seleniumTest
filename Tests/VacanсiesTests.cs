@@ -2,23 +2,16 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using seleniumTest.Pages;
+using seleniumTest.Data;
 using System.Collections.Generic;
 
 
 namespace seleniumTest.Tests
 {
-
+    [TestFixture]
     class VacanсiesTests
     {
-        VacanсiesPage page = new VacanсiesPage();
-
-        public static IEnumerable<TestCaseData> countEnglishVacancies()
-        {
-            yield return new TestCaseData(page.linkDevelop,6);
-            yield return new TestCaseData(page.linkSales,8);
-            yield return new TestCaseData(page.linkSupport,3);
-            
-        }
+        VacanсiesPage page;
 
         [SetUp]
         public void Initialize()
@@ -29,9 +22,9 @@ namespace seleniumTest.Tests
             page = new VacanсiesPage();
         }
         
-        [Test, TestCaseSource("countEnglishVacancies")]
-        public void CountVacancySelectEnglishLanguage(IWebElement department,int expectVacancy)
-        {
+        [Test, TestCaseSource(typeof(TestData),"countEnglishVacancies")]
+        public void CountVacancySelectEnglishLanguage(string department, int expectVacancy)
+        {            
             page.SelectDepartment(department);
             page.SelectLanguage(page.checkerEnglishLanguage);
             Assert.AreEqual(expectVacancy, page.vacancyCard.Count, $"The number of vacancies {department} is not correct");
