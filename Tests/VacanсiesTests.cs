@@ -30,6 +30,14 @@ namespace seleniumTest.Tests
             Assert.AreEqual(expectVacancy, page.vacancyCard.Count, $"The number of vacancies {department} is not correct");
         }
 
+        [Test]
+        public void CountVacancySelectHRDepartAndRussiaEnglishLanguage()
+        {
+            page.SelectDepartment(page.linkHR);
+            page.SelectLanguage(page.checkerRussiaLanguage, page.checkerEnglishLanguage);
+            Assert.AreEqual(4, page.vacancyCard.Count, "The number of vacancies is not correct ");
+        }
+
         [TearDown]
         public void EndTest()
         {
