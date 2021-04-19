@@ -1,8 +1,8 @@
 # seleniumTest
-Example selenium test 
+Selenium test example
 
-## Описание 
-Переход на страницу вакансий Veeam и выполнение тестов
+## Description
+Go to the Veeam job page and run tests
 
-## Тесты
-Запрос количества вакансий с фильтром по отделам и языкам. Сравнение с ожидаемым количеством.
+## Tests
+Request for the number of vacancies with a filter by department and language. Comparison with expected participation.
